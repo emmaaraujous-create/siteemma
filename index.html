@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auntie Emma | Pet Care Services - Royal Palm Beach</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter, Great Vibes (Script for Logo), and Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons for clean, friendly iconography -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rose: {
+                            50: '#FCF8F9',
+                            100: '#F7EEF0',
+                            200: '#EEDCE1',
+                            300: '#DFBFC8',
+                            400: '#CFA3B0', /* Primary Brand Dusty Pink */
+                            500: '#B88493',
+                            600: '#9E6978',
+                        },
+                        charcoal: {
+                            DEFAULT: '#5A5859', /* Brand Gray from PDF */
+                            dark: '#3D3B3C',
+                            light: '#858283'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        script: ['"Great Vibes"', 'cursive'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Subtle paw background pattern */
+        .bg-paw-pattern {
+            background-color: #FCF8F9;
+            background-image: radial-gradient(#DFBFC8 0.75px, transparent 0.75px), radial-gradient(#DFBFC8 0.75px, #FCF8F9 0.75px);
+            background-size: 36px 36px;
+            background-position: 0 0, 18px 18px;
+        }
+
+        /* Floating animation for decorative elements */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(2deg); }
+        }
+        .animate-float {
+            animation: floatSlow 5s ease-in-out infinite;
+        }
+        .animate-float-delayed {
+            animation: floatSlow 6s ease-in-out 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-rose-50 text-charcoal font-sans antialiased selection:bg-rose-300 selection:text-charcoal-dark overflow-x-hidden">
+
+    <div class="bg-rose-400 text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium tracking-wide">
+        <div class="max-w-6xl mx-auto flex items-center justify-center gap-2 flex-wrap">
+            <span class="inline-flex items-center gap-1 bg-white/20 px-2.5 py-0.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+                <i class="ph-fill ph-sparkle"></i> Royal Palm Beach
+            </span>
+            <span>Limited spots available to ensure every pet receives personalized care and attention!</span>
+            <a href="#contact" class="underline hover:text-rose-100 font-semibold ml-1">Book a Visit &rarr;</a>
+        </div>
+    </div>
+
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-rose-100 transition-all">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo (Recreated from PDF Continuous Line Paw + Heart) -->
+            <a href="#" class="flex items-center gap-3 group focus:outline-none">
+                <div class="w-12 h-12 rounded-2xl bg-rose-50 border border-rose-200 flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <svg class="w-9 h-9 text-rose-400" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                        <!-- Continuous line style paw with heart inside -->
+                        <ellipse cx="23" cy="48" rx="11" ry="15" transform="rotate(-20 23 48)" />
+                        <ellipse cx="41" cy="27" rx="11" ry="16" transform="rotate(-6 41 27)" />
+                        <ellipse cx="61" cy="27" rx="11" ry="16" transform="rotate(6 61 27)" />
+                        <ellipse cx="79" cy="48" rx="11" ry="15" transform="rotate(20 79 48)" />
+                        <path d="M 32 76 C 24 66, 33 50, 51 50 C 69 50, 78 66, 70 76 C 63 85, 55 82, 51 74 C 47 82, 39 85, 32 76 Z" />
+                        <path d="M 51 72 C 51 72, 42 65, 44 60 C 46 56, 51 59, 51 62 C 51 59, 56 56, 58 60 C 60 65, 51 72, 51 72 Z" stroke-width="3" class="text-rose-500" />
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <div class="text-3xl sm:text-4xl font-script leading-none tracking-wide">
+                        <span class="text-rose-400">Auntie</span>
+                        <span class="text-charcoal-dark ml-1">Emma</span>
+                    </div>
+                    <span class="text-[10px] sm:text-xs uppercase tracking-[0.22em] text-charcoal-light font-semibold mt-0.5">
+                        Pet Care Services
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-charcoal">
+                <a href="#home" class="hover:text-rose-500 transition-colors">Home</a>
+                <a href="#services" class="hover:text-rose-500 transition-colors">Our Services</a>
+                <a href="#why-us" class="hover:text-rose-500 transition-colors">Why Auntie Emma</a>
+                <a href="#contact" class="hover:text-rose-500 transition-colors">Contact</a>
+            </nav>
+
+            <!-- Direct Call CTA Button -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="tel:5618600637" class="inline-flex items-center gap-2 bg-rose-400 hover:bg-rose-500 text-white font-medium text-sm px-5 py-2.5 rounded-full shadow-sm hover:shadow transition-all">
+                    <i class="ph-fill ph-phone-call text-lg"></i>
+                    <span>(561) 860-0637</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Trigger -->
+            <button id="mobile-menu-btn" aria-label="Open Menu" class="md:hidden p-2.5 rounded-xl bg-rose-50 text-charcoal-dark hover:bg-rose-100 focus:outline-none">
+                <i class="ph ph-list text-2xl" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-rose-100 px-6 py-5 space-y-4 shadow-lg">
+            <div class="flex flex-col space-y-3 text-base font-medium text-charcoal-dark">
+                <a href="#home" class="mobile-link py-1 hover:text-rose-500">Home</a>
+                <a href="#services" class="mobile-link py-1 hover:text-rose-500">Our Services</a>
+                <a href="#why-us" class="mobile-link py-1 hover:text-rose-500">Why Choose Us</a>
+                <a href="#contact" class="mobile-link py-1 hover:text-rose-500">Contact & Location</a>
+            </div>
+            <div class="pt-3 border-t border-rose-100 flex flex-col sm:flex-row gap-3">
+                <a href="tel:5618600637" class="w-full inline-flex items-center justify-center gap-2 bg-rose-400 text-white font-medium py-3 px-4 rounded-xl shadow-sm">
+                    <i class="ph-fill ph-phone-call"></i>
+                    Call (561) 860-0637
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="relative pt-10 pb-20 md:pt-16 md:pb-28 overflow-hidden bg-paw-pattern">
+        <!-- Decorative Sketch Paw Prints (inspired by PDF top-left graphic) -->
+        <svg class="hidden lg:block absolute top-10 left-10 w-28 h-28 text-charcoal/10 -rotate-12 pointer-events-none animate-float" viewBox="0 0 100 100" fill="currentColor">
+            <ellipse cx="25" cy="40" rx="8" ry="12" transform="rotate(-15 25 40)"/>
+            <ellipse cx="42" cy="28" rx="8" ry="12" transform="rotate(-5 42 28)"/>
+            <ellipse cx="60" cy="28" rx="8" ry="12" transform="rotate(5 60 28)"/>
+            <ellipse cx="77" cy="40" rx="8" ry="12" transform="rotate(15 77 40)"/>
+            <path d="M30,68 C25,55 35,45 50,45 C65,45 75,55 70,68 C66,78 58,76 50,73 C42,76 34,78 30,68 Z"/>
+        </svg>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Left Column: Copy & CTAs -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-rose-200 shadow-sm text-rose-600 text-xs sm:text-sm font-medium">
+                        <i class="ph-fill ph-heart text-rose-400"></i>
+                        <span>Your Pet's Home Away From Home</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-semibold text-charcoal-dark leading-tight">
+                        Where pets are treated <span class="italic font-normal text-rose-500">like family.</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-charcoal max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Welcome to <strong class="font-semibold text-charcoal-dark">Auntie Emma Pet Care Services</strong> in Royal Palm Beach. Whether you need overnight boarding, daily walks, or loving vacation visits, we offer a safe, calm, and affectionate home environment for your best friend.
+                    </p>
+
+                    <!-- Primary Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-charcoal-dark hover:bg-charcoal text-white font-medium px-8 py-4 rounded-full shadow-md hover:shadow-lg transition-all text-base">
+                            <i class="ph ph-calendar-check text-xl text-rose-300"></i>
+                            <span>Schedule Care Now</span>
+                        </a>
+                        <a href="#services" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-rose-100 text-charcoal-dark border border-rose-200 font-medium px-7 py-4 rounded-full transition-all text-base">
+                            <span>Explore Services</span>
+                            <i class="ph ph-arrow-down text-lg text-rose-500"></i>
+                        </a>
+                    </div>
+
+                    <!-- Quick Trust Badges -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-rose-200/70 max-w-lg mx-auto lg:mx-0 text-left">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-9 h-9 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0">
+                                <i class="ph-fill ph-house-line text-lg"></i>
+                            </div>
+                            <span class="text-xs sm:text-sm font-medium text-charcoal-dark leading-snug">Cozy Home Setting</span>
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-9 h-9 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0">
+                                <i class="ph-fill ph-camera text-lg"></i>
+                            </div>
+                            <span class="text-xs sm:text-sm font-medium text-charcoal-dark leading-snug">Daily Photo Updates</span>
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-9 h-9 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0">
+                                <i class="ph-fill ph-map-pin text-lg"></i>
+                            </div>
+                            <span class="text-xs sm:text-sm font-medium text-charcoal-dark leading-snug">Royal Palm Beach</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Visual Collage inspired by the two puppies on Page 1 of the PDF -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Soft Pink Organic Circle Backdrop -->
+                        <div class="absolute -inset-4 bg-gradient-to-tr from-rose-200 via-rose-100 to-white rounded-[3rem] rotate-3 -z-10 shadow-inner"></div>
+                        
+                        <div class="bg-white p-4 sm:p-6 rounded-[2.5rem] shadow-xl border border-rose-100 relative">
+                            <!-- Main Puppy Image -->
+                            <div class="overflow-hidden rounded-[2rem] aspect-[4/4] relative bg-rose-50">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1591160690555-5debfba289f0?auto=format&fit=crop&w=900&q=80" 
+                                    onerror="this.src='https://placehold.co/600x600/F7EEF0/5A5859?text=Happy+Puppy'"
+                                    alt="Happy golden puppy ready for playtime" 
+                                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                                >
+                                <div class="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur-md p-3.5 rounded-2xl flex items-center justify-between shadow-sm">
+                                    <div class="flex items-center gap-3">
+                                        <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
+                                        <div>
+                                            <p class="text-xs font-bold text-charcoal-dark uppercase tracking-wider">Overnight Boarding & Care</p>
+                                            <p class="text-xs text-charcoal-light">Individual attention & affection</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-rose-500 bg-rose-50 p-2 rounded-xl">
+                                        <i class="ph-fill ph-paw-print text-xl"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Floating Secondary Pet Card -->
+                            <div class="hidden sm:flex items-center gap-3 bg-white p-3 rounded-2xl shadow-lg border border-rose-100 absolute -top-6 -left-6 animate-float">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=200&q=80" 
+                                    onerror="this.src='https://placehold.co/100x100/EEDCE1/5A5859?text=Pup'"
+                                    alt="Cute small dog" 
+                                    class="w-12 h-12 rounded-xl object-cover"
+                                >
+                                <div class="pr-2">
+                                    <div class="flex text-amber-400 text-xs">
+                                        <i class="ph-fill ph-star"></i>
+                                        <i class="ph-fill ph-star"></i>
+                                        <i class="ph-fill ph-star"></i>
+                                        <i class="ph-fill ph-star"></i>
+                                        <i class="ph-fill ph-star"></i>
+                                    </div>
+                                    <p class="text-xs font-semibold text-charcoal-dark mt-0.5">100% Loving Care</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-white relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-rose-500 bg-rose-50 px-3.5 py-1.5 rounded-full border border-rose-200">
+                    What We Offer
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-semibold text-charcoal-dark">
+                    Tailored Care for Every Pet
+                </h2>
+                <p class="text-charcoal text-base">
+                    Whether you're working late or heading out on vacation, we keep your furry family members happy, exercised, and deeply loved.
+                </p>
+            </div>
+
+            <!-- Services Grid (6 core items from the PDF) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                
+                <!-- Service 1: Overnight Boarding (Highlighted as featured in PDF top-right badge) -->
+                <div class="group bg-rose-50/70 hover:bg-rose-100/60 rounded-3xl p-7 border border-rose-200 transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="absolute top-4 right-4 bg-rose-400 text-white text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full">
+                        Most Popular
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-white text-rose-500 shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i class="ph-duotone ph-moon-stars text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-semibold text-charcoal-dark mb-2">
+                            Overnight Boarding
+                        </h3>
+                        <p class="text-sm text-charcoal leading-relaxed">
+                            Cage-free, cozy overnight stays in our calm home environment. Your pet sleeps comfortably and feels right at home while you're away.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-rose-200/60 flex items-center justify-between text-xs font-semibold text-rose-600">
+                        <span>Your pet's home away from home</span>
+                        <i class="ph-bold ph-paw-print"></i>
+                    </div>
+                </div>
+
+                <!-- Service 2: Cat Sitting -->
+                <div class="group bg-white hover:bg-rose-50/40 rounded-3xl p-7 border border-rose-100 hover:border-rose-200 transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-rose-50 text-rose-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i class="ph-duotone ph-cat text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-semibold text-charcoal-dark mb-2">
+                            Cat Sitting
+                        </h3>
+                        <p class="text-sm text-charcoal leading-relaxed">
+                            Gentle, stress-free care for your feline companions, including fresh food and water, litter box maintenance, and quiet cuddles.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-charcoal-light">
+                        <span>Purr-fect peace of mind</span>
+                        <i class="ph-bold ph-heart text-rose-400"></i>
+                    </div>
+                </div>
+
+                <!-- Service 3: Dog Walks -->
+                <div class="group bg-white hover:bg-rose-50/40 rounded-3xl p-7 border border-rose-100 hover:border-rose-200 transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-rose-50 text-rose-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i class="ph-duotone ph-dog text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-semibold text-charcoal-dark mb-2">
+                            Dog Walks
+                        </h3>
+                        <p class="text-sm text-charcoal leading-relaxed">
+                            Safe, refreshing neighborhood walks paced to your dog's energy level—from brisk strolls to leisurely sniff-ari adventures.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-charcoal-light">
+                        <span>Fresh air & happy tails</span>
+                        <i class="ph-bold ph-footprints text-rose-400"></i>
+                    </div>
+                </div>
+
+                <!-- Service 4: Playtime and Exercise -->
+                <div class="group bg-white hover:bg-rose-50/40 rounded-3xl p-7 border border-rose-100 hover:border-rose-200 transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-rose-50 text-rose-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i class="ph-duotone ph-tennis-ball text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-semibold text-charcoal-dark mb-2">
+                            Playtime & Exercise
+                        </h3>
+                        <p class="text-sm text-charcoal leading-relaxed">
+                            Dedicated one-on-one games, enrichment activities, and backyard fun to keep your pet physically active and mentally stimulated.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-charcoal-light">
+                        <span>Active, joyful routines</span>
+                        <i class="ph-bold ph-sparkle text-rose-400"></i>
+                    </div>
+                </div>
+
+                <!-- Service 5: Vacation Visits -->
+                <div class="group bg-white hover:bg-rose-50/40 rounded-3xl p-7 border border-rose-100 hover:border-rose-200 transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-rose-50 text-rose-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i class="ph-duotone ph-suitcase-rolling text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-semibold text-charcoal-dark mb-2">
+                            Vacation Visits
+                        </h3>
+                        <p class="text-sm text-charcoal leading-relaxed">
+                            Scheduled drop-in visits while you travel. We handle feedings, potty breaks, mail collection, and plenty of loving companionship.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-charcoal-light">
+                        <span>Travel worry-free</span>
+                        <i class="ph-bold ph-camera text-rose-400"></i>
+                    </div>
+                </div>
+
+                <!-- Service 6: And More! -->
+                <div class="group bg-gradient-to-br from-charcoal-dark to-charcoal rounded-3xl p-7 text-white transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-white/10 text-rose-300 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i class="ph-duotone ph-hand-heart text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-semibold text-white mb-2">
+                            ...And More!
+                        </h3>
+                        <p class="text-sm text-rose-100/90 leading-relaxed">
+                            Have a puppy with a special schedule, a senior pet needing extra patience, or custom care requests? Just ask Auntie Emma!
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/15">
+                        <a href="#contact" class="inline-flex items-center gap-2 text-xs font-semibold text-rose-300 hover:text-white transition-colors">
+                            <span>Request custom pet care</span>
+                            <i class="ph-bold ph-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us" class="py-20 bg-rose-50 border-y border-rose-200/60 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Playful Dog Illustration Card (inspired by Page 2 brown dog graphic) -->
+                <div class="lg:col-span-5 order-2 lg:order-1">
+                    <div class="bg-white rounded-[2.5rem] p-8 border border-rose-200 shadow-lg text-center relative overflow-hidden">
+                        <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-rose-100 flex items-center justify-center">
+                            <!-- Minimalist Friendly Dachshund/Hound SVG inspired by Page 2 illustration -->
+                            <svg class="w-14 h-14" viewBox="0 0 100 100" fill="none">
+                                <!-- Ears -->
+                                <path d="M30 42 C 18 52, 12 72, 20 76 C 27 79, 34 62, 36 48 Z" fill="#4A4849"/>
+                                <path d="M56 46 C 62 58, 70 72, 77 69 C 83 66, 74 48, 62 40 Z" fill="#4A4849"/>
+                                <!-- Neck & Head -->
+                                <path d="M32 90 L 34 38 C 34 28, 46 26, 52 32 L 85 16 C 89 14, 92 20, 88 26 L 56 54 L 56 90 Z" fill="#C49A84"/>
+                                <!-- Nose -->
+                                <path d="M82 17 L 90 15 C 92 17, 90 23, 85 24 Z" fill="#3D3B3C"/>
+                                <!-- Eyes & Smile -->
+                                <ellipse cx="43" cy="36" rx="2.2" ry="3.5" fill="#3D3B3C"/>
+                                <ellipse cx="51" cy="34" rx="2.2" ry="3.5" fill="#3D3B3C"/>
+                                <path d="M56 44 C 57 50, 63 51, 66 49" stroke="#3D3B3C" stroke-width="2.5" stroke-linecap="round"/>
+                                <!-- Pink Collar -->
+                                <rect x="30" y="82" width="28" height="8" rx="4" fill="#F26B8A"/>
+                            </svg>
+                        </div>
+
+                        <p class="font-script text-3xl text-rose-500">Why choose</p>
+                        <h3 class="text-3xl font-serif font-bold text-charcoal-dark mb-4">Auntie Emma</h3>
+                        
+                        <p class="text-sm text-charcoal leading-relaxed mb-6">
+                            "We keep our guest list small on purpose so every single tail wag, purr, and cuddle gets the undivided love it deserves."
+                        </p>
+
+                        <!-- Peeking Dogs Row (inspired by bottom of Page 2) -->
+                        <div class="pt-6 border-t border-rose-100">
+                            <div class="flex justify-center -space-x-3 mb-3">
+                                <img class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-sm" src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=160&q=80" onerror="this.src='https://placehold.co/100x100/EEDCE1/5A5859?text=Dog+1'" alt="Beagle">
+                                <img class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-sm" src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=160&q=80" onerror="this.src='https://placehold.co/100x100/EEDCE1/5A5859?text=Dog+2'" alt="Golden Retriever">
+                                <img class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-sm" src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=160&q=80" onerror="this.src='https://placehold.co/100x100/EEDCE1/5A5859?text=Dog+3'" alt="Pug">
+                                <img class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-sm" src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=160&q=80" onerror="this.src='https://placehold.co/100x100/EEDCE1/5A5859?text=Cat+1'" alt="Cat">
+                            </div>
+                            <p class="font-serif italic text-charcoal-dark font-medium text-base">
+                                "Where pets are treated like family."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: The 4 Pillars from Page 2 of the PDF -->
+                <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-[0.2em] text-rose-500">
+                            The Auntie Emma Difference
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-serif font-semibold text-charcoal-dark mt-2">
+                            Peace of Mind for You, <br class="hidden sm:inline">A Happy Stay for Them
+                        </h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
+                        
+                        <!-- Pillar 1 -->
+                        <div class="bg-white p-6 rounded-3xl border border-rose-100 shadow-sm hover:border-rose-300 transition-colors">
+                            <div class="w-11 h-11 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center mb-4">
+                                <i class="ph-fill ph-heart-straight text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg font-serif font-semibold text-charcoal-dark mb-1.5">
+                                Personalized & Loving Care
+                            </h3>
+                            <p class="text-sm text-charcoal leading-relaxed">
+                                Every pet receives individual attention and affection tailored to their unique personality and routine.
+                            </p>
+                        </div>
+
+                        <!-- Pillar 2 -->
+                        <div class="bg-white p-6 rounded-3xl border border-rose-100 shadow-sm hover:border-rose-300 transition-colors">
+                            <div class="w-11 h-11 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center mb-4">
+                                <i class="ph-fill ph-house-line text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg font-serif font-semibold text-charcoal-dark mb-1.5">
+                                Comfortable Home Environment
+                            </h3>
+                            <p class="text-sm text-charcoal leading-relaxed">
+                                A calm and safe space where pets can relax, play, and truly feel at home without kennel stress.
+                            </p>
+                        </div>
+
+                        <!-- Pillar 3 -->
+                        <div class="bg-white p-6 rounded-3xl border border-rose-100 shadow-sm hover:border-rose-300 transition-colors">
+                            <div class="w-11 h-11 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center mb-4">
+                                <i class="ph-fill ph-camera text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg font-serif font-semibold text-charcoal-dark mb-1.5">
+                                Updates for Peace of Mind
+                            </h3>
+                            <p class="text-sm text-charcoal leading-relaxed">
+                                We send photos and updates so you always know your pet is happy, eating well, and safe.
+                            </p>
+                        </div>
+
+                        <!-- Pillar 4 -->
+                        <div class="bg-white p-6 rounded-3xl border border-rose-100 shadow-sm hover:border-rose-300 transition-colors">
+                            <div class="w-11 h-11 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center mb-4">
+                                <i class="ph-fill ph-star-four text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg font-serif font-semibold text-charcoal-dark mb-1.5">
+                                Limited Spots Available
+                            </h3>
+                            <p class="text-sm text-charcoal leading-relaxed">
+                                We intentionally limit bookings to ensure every pet receives personalized care and undivided attention.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="bg-rose-50 rounded-[2.5rem] border border-rose-200 p-6 sm:p-10 lg:p-14 shadow-sm">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                    
+                    <!-- Contact Details Column (All info from Page 1 Footer) -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-[0.2em] text-rose-500">
+                                Get in Touch
+                            </span>
+                            <h2 class="text-3xl sm:text-4xl font-serif font-semibold text-charcoal-dark mt-2">
+                                Ready to Plan Your Pet's Stay?
+                            </h2>
+                            <p class="text-sm sm:text-base text-charcoal mt-3 leading-relaxed">
+                                Reach out by phone, Instagram, or use the quick inquiry form to check availability in Royal Palm Beach.
+                            </p>
+                        </div>
+
+                        <!-- Contact Cards -->
+                        <div class="space-y-3.5 pt-2">
+                            
+                            <!-- Phone Card -->
+                            <div class="bg-white p-4 rounded-2xl border border-rose-100 flex items-center justify-between gap-3 shadow-sm">
+                                <a href="tel:5618600637" class="flex items-center gap-3.5 group">
+                                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center group-hover:bg-rose-400 group-hover:text-white transition-colors">
+                                        <i class="ph-fill ph-phone-call text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-semibold uppercase tracking-wider text-charcoal-light block">Call or Text</span>
+                                        <span class="text-lg font-bold text-charcoal-dark group-hover:text-rose-500 transition-colors">(561) 860-0637</span>
+                                    </div>
+                                </a>
+                                <button onclick="copyPhoneNumber()" id="copy-btn" class="text-xs font-medium bg-rose-50 hover:bg-rose-100 text-charcoal-dark px-3 py-2 rounded-xl border border-rose-200 transition-colors flex items-center gap-1.5" title="Copy phone number">
+                                    <i class="ph ph-copy"></i>
+                                    <span id="copy-text">Copy</span>
+                                </button>
+                            </div>
+
+                            <!-- Instagram Card -->
+                            <a href="https://instagram.com/emmapetcare" target="_blank" rel="noopener noreferrer" class="bg-white p-4 rounded-2xl border border-rose-100 flex items-center justify-between gap-3 shadow-sm hover:border-rose-300 transition-all group">
+                                <div class="flex items-center gap-3.5">
+                                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center group-hover:bg-rose-400 group-hover:text-white transition-colors">
+                                        <i class="ph-fill ph-instagram-logo text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-semibold uppercase tracking-wider text-charcoal-light block">Follow Our Furry Guests</span>
+                                        <span class="text-base font-bold text-charcoal-dark">@emmapetcare</span>
+                                    </div>
+                                </div>
+                                <i class="ph ph-arrow-up-right text-xl text-charcoal-light group-hover:text-rose-500 mr-2"></i>
+                            </a>
+
+                            <!-- Location Card -->
+                            <div class="bg-white p-4 rounded-2xl border border-rose-100 flex items-center gap-3.5 shadow-sm">
+                                <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center shrink-0">
+                                    <i class="ph-fill ph-map-pin text-2xl"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-semibold uppercase tracking-wider text-charcoal-light block">Service Area</span>
+                                    <span class="text-base font-bold text-charcoal-dark">Royal Palm Beach, FL</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Quick Care Inquiry Form -->
+                    <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-rose-100 shadow-md">
+                        <h3 class="text-xl font-serif font-semibold text-charcoal-dark mb-1">
+                            Check Availability
+                        </h3>
+                        <p class="text-xs sm:text-sm text-charcoal-light mb-6">
+                            Tell us a little about your pet and send your request directly via SMS or WhatsApp.
+                        </p>
+
+                        <form id="inquiry-form" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="owner-name" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">Your Name *</label>
+                                    <input type="text" id="owner-name" required placeholder="Jane Doe" class="w-full px-4 py-3 rounded-xl bg-rose-50/50 border border-rose-200 focus:outline-none focus:border-rose-400 focus:bg-white text-sm text-charcoal-dark">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">Phone Number *</label>
+                                    <input type="tel" id="phone" required placeholder="(561) 000-0000" class="w-full px-4 py-3 rounded-xl bg-rose-50/50 border border-rose-200 focus:outline-none focus:border-rose-400 focus:bg-white text-sm text-charcoal-dark">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="pet-name" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">Pet's Name & Breed *</label>
+                                    <input type="text" id="pet-name" required placeholder="Bella (Shih Tzu)" class="w-full px-4 py-3 rounded-xl bg-rose-50/50 border border-rose-200 focus:outline-none focus:border-rose-400 focus:bg-white text-sm text-charcoal-dark">
+                                </div>
+                                <div>
+                                    <label for="service-type" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">Service Needed *</label>
+                                    <select id="service-type" class="w-full px-4 py-3 rounded-xl bg-rose-50/50 border border-rose-200 focus:outline-none focus:border-rose-400 focus:bg-white text-sm text-charcoal-dark">
+                                        <option value="Overnight Boarding">Overnight Boarding</option>
+                                        <option value="Cat Sitting">Cat Sitting</option>
+                                        <option value="Dog Walks">Dog Walks</option>
+                                        <option value="Playtime and Exercise">Playtime and Exercise</option>
+                                        <option value="Vacation Visits">Vacation Visits</option>
+                                        <option value="Other / Custom Care">Other / Custom Care</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="notes" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">Dates & Special Notes</label>
+                                <textarea id="notes" rows="3" placeholder="Let us know your desired dates and any special routines your pet loves..." class="w-full px-4 py-3 rounded-xl bg-rose-50/50 border border-rose-200 focus:outline-none focus:border-rose-400 focus:bg-white text-sm text-charcoal-dark"></textarea>
+                            </div>
+
+                            <!-- Send Options: SMS (Primary in US) & WhatsApp -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                                <button type="submit" data-channel="sms" class="w-full bg-rose-400 hover:bg-rose-500 text-white font-semibold py-3.5 px-5 rounded-xl shadow-sm hover:shadow transition-all flex items-center justify-center gap-2 text-sm sm:text-base">
+                                    <i class="ph-fill ph-chat-circle-text text-lg"></i>
+                                    <span>Send via SMS Text</span>
+                                </button>
+                                <button type="submit" data-channel="whatsapp" class="w-full bg-charcoal-dark hover:bg-charcoal text-white font-semibold py-3.5 px-5 rounded-xl shadow-sm hover:shadow transition-all flex items-center justify-center gap-2 text-sm sm:text-base">
+                                    <i class="ph-fill ph-whatsapp-logo text-lg text-emerald-400"></i>
+                                    <span>Send via WhatsApp</span>
+                                </button>
+                            </div>
+                        </form>
+
+                        <!-- Custom Confirmation & Fallback Message Box (No alert() used) -->
+                        <div id="form-feedback" class="hidden mt-4 p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm space-y-3">
+                            <div class="flex items-start gap-3">
+                                <i class="ph-fill ph-check-circle text-xl text-emerald-600 shrink-0 mt-0.5"></i>
+                                <div class="flex-1">
+                                    <p class="font-semibold">Opening your messaging app...</p>
+                                    <p class="text-xs mt-0.5 text-emerald-700" id="feedback-details"></p>
+                                </div>
+                            </div>
+                            <div class="pt-2 border-t border-emerald-200/70 flex flex-wrap items-center justify-between gap-2">
+                                <span class="text-[11px] text-emerald-700">On a computer or app didn't open?</span>
+                                <div class="flex items-center gap-2">
+                                    <button type="button" onclick="copyFormattedMessage()" id="copy-msg-btn" class="text-xs font-semibold bg-white hover:bg-emerald-100 text-emerald-800 px-3 py-1.5 rounded-lg border border-emerald-300 transition-colors inline-flex items-center gap-1.5">
+                                        <i class="ph ph-copy"></i>
+                                        <span id="copy-msg-text">Copy Message Text</span>
+                                    </button>
+                                    <a id="direct-link-fallback" href="#" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold underline text-emerald-800 hover:text-emerald-950 px-2 py-1">
+                                        Try Again &rarr;
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-charcoal-dark text-rose-100 py-12 border-t border-rose-200/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+            <div>
+                <div class="text-3xl font-script text-rose-300">
+                    Auntie Emma <span class="font-sans text-xs uppercase tracking-[0.2em] text-rose-100/80 ml-2">Pet Care Services</span>
+                </div>
+                <p class="text-xs text-rose-100/70 mt-1">
+                    Your Pet's Home Away From Home &bull; Where pets are treated like family.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-rose-100/80">
+                <span><i class="ph-fill ph-map-pin text-rose-300 mr-1"></i> Royal Palm Beach</span>
+                <a href="tel:5618600637" class="hover:text-white transition-colors"><i class="ph-fill ph-phone text-rose-300 mr-1"></i> (561) 860-0637</a>
+                <a href="https://instagram.com/emmapetcare" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors"><i class="ph-fill ph-instagram-logo text-rose-300 mr-1"></i> @emmapetcare</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.replace('ph-list', 'ph-x');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.replace('ph-x', 'ph-list');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.replace('ph-x', 'ph-list');
+            });
+        });
+
+        // Copy Phone Number helper using execCommand for iframe compatibility
+        function copyPhoneNumber() {
+            const tempInput = document.createElement('input');
+            tempInput.value = '(561) 860-0637';
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand('copy');
+                const copyText = document.getElementById('copy-text');
+                copyText.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyText.textContent = 'Copy';
+                }, 2000);
+            } catch (err) {
+                console.error('Copy failed', err);
+            }
+            document.body.removeChild(tempInput);
+        }
+
+        // Handle Inquiry Form Submission via SMS or WhatsApp
+        const inquiryForm = document.getElementById('inquiry-form');
+        const formFeedback = document.getElementById('form-feedback');
+        const feedbackDetails = document.getElementById('feedback-details');
+        const directLinkFallback = document.getElementById('direct-link-fallback');
+        let lastGeneratedMessage = '';
+        let selectedChannel = 'sms';
+
+        // Track which submit button was clicked (SMS vs WhatsApp)
+        inquiryForm.querySelectorAll('button[type="submit"]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                selectedChannel = btn.getAttribute('data-channel') || 'sms';
+            });
+        });
+
+        inquiryForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const ownerName = document.getElementById('owner-name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const petName = document.getElementById('pet-name').value.trim();
+            const serviceType = document.getElementById('service-type').value;
+            const notes = document.getElementById('notes').value.trim();
+
+            // Build clean, friendly message for Auntie Emma
+            const messageLines = [
+                `Hi Auntie Emma! 🐾 I'd like to check availability for pet care:`,
+                ``,
+                `• Name: ${ownerName}`,
+                `• Phone: ${phone}`,
+                `• Pet: ${petName}`,
+                `• Service: ${serviceType}`
+            ];
+
+            if (notes) {
+                messageLines.push(`• Dates/Notes: ${notes}`);
+            }
+
+            lastGeneratedMessage = messageLines.join('\n');
+            const encodedMsg = encodeURIComponent(lastGeneratedMessage);
+            const targetPhoneUS = '15618600637';
+
+            // Detect iOS vs Android/Standard for proper SMS body delimiter
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            const smsSeparator = isIOS ? '&' : '?';
+            const smsUrl = `sms:+${targetPhoneUS}${smsSeparator}body=${encodedMsg}`;
+            const whatsappUrl = `https://wa.me/${targetPhoneUS}?text=${encodedMsg}`;
+
+            const finalUrl = selectedChannel === 'whatsapp' ? whatsappUrl : smsUrl;
+
+            // Update UI feedback box
+            const channelLabel = selectedChannel === 'whatsapp' ? 'WhatsApp' : 'SMS Text Message';
+            feedbackDetails.innerHTML = `Your message for <strong>${petName}</strong> (${serviceType}) is ready to send via <strong>${channelLabel}</strong> to <strong>(561) 860-0637</strong>.`;
+            directLinkFallback.href = finalUrl;
+            formFeedback.classList.remove('hidden');
+
+            // Trigger native messaging app or WhatsApp
+            if (selectedChannel === 'whatsapp') {
+                window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+            } else {
+                window.location.href = smsUrl;
+            }
+        });
+
+        // Copy generated message text to clipboard as fallback for desktop users
+        function copyFormattedMessage() {
+            if (!lastGeneratedMessage) return;
+            const tempArea = document.createElement('textarea');
+            tempArea.value = lastGeneratedMessage;
+            document.body.appendChild(tempArea);
+            tempArea.select();
+            try {
+                document.execCommand('copy');
+                const copyMsgText = document.getElementById('copy-msg-text');
+                copyMsgText.textContent = 'Message Copied!';
+                setTimeout(() => {
+                    copyMsgText.textContent = 'Copy Message Text';
+                }, 2500);
+            } catch (err) {
+                console.error('Copy message failed', err);
+            }
+            document.body.removeChild(tempArea);
+        }
+    </script>
+</body>
+</html>
