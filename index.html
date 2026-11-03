@@ -9,10 +9,11 @@
     <!-- Meta Tags de Compartilhamento (WhatsApp, iMessage, Facebook, Instagram) -->
     <!-- IMPORTANTE: Substitua "https://seudominio.com" pelo endereço real onde o site ficar hospedado -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://seudominio.com/">
+    <meta property="og:url" content="https://auntieemma.com/">
     <meta property="og:title" content="Auntie Emma | Pet Care Services">
     <meta property="og:description" content="Where pets are treated like family. Overnight boarding, cat sitting, dog walks & vacation visits in Royal Palm Beach.">
-    <meta property="og:image" content="https://siteemma-seven.vercel.app/share-logo.png">
+    <meta property="og:image" content="https://auntieemma.com/share-logo.jpg?v=2">
+    <meta property="og:image:secure_url" content="https://auntieemma.com/share-logo.png?v=2">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -21,7 +22,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Auntie Emma | Pet Care Services">
     <meta name="twitter:description" content="Where pets are treated like family. Royal Palm Beach, FL.">
-    <meta name="twitter:image" content="https://siteemma-seven.vercel.app/share-logo.png">
+    <meta name="twitter:image" content="https://auntieemma.com/share-logo.jpg?v=2">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -197,24 +198,26 @@
                     </div>
 
                     <!-- Quick Trust Badges -->
-                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-rose-200/70 max-w-lg mx-auto lg:mx-0 text-left">
-                        <div class="flex items-center gap-2.5">
-                            <div class="w-9 h-9 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0">
-                                <i class="ph-fill ph-house-line text-lg"></i>
+                    <div class="pt-6 border-t border-rose-200/70 max-w-xl mx-auto lg:mx-0 text-left">
+                        <div class="grid grid-cols-3 gap-3 w-full">
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0">
+                                    <i class="ph-fill ph-house-line text-base"></i>
+                                </div>
+                                <span class="text-xs font-medium text-charcoal-dark leading-snug">Cozy Home Setting</span>
                             </div>
-                            <span class="text-xs sm:text-sm font-medium text-charcoal-dark leading-snug">Cozy Home Setting</span>
-                        </div>
-                        <div class="flex items-center gap-2.5">
-                            <div class="w-9 h-9 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0">
-                                <i class="ph-fill ph-camera text-lg"></i>
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0">
+                                    <i class="ph-fill ph-camera text-base"></i>
+                                </div>
+                                <span class="text-xs font-medium text-charcoal-dark leading-snug">Daily Photo Updates</span>
                             </div>
-                            <span class="text-xs sm:text-sm font-medium text-charcoal-dark leading-snug">Daily Photo Updates</span>
-                        </div>
-                        <div class="flex items-center gap-2.5">
-                            <div class="w-9 h-9 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0">
-                                <i class="ph-fill ph-map-pin text-lg"></i>
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0">
+                                    <i class="ph-fill ph-map-pin text-base"></i>
+                                </div>
+                                <span class="text-xs font-medium text-charcoal-dark leading-snug">Royal Palm Beach</span>
                             </div>
-                            <span class="text-xs sm:text-sm font-medium text-charcoal-dark leading-snug">Royal Palm Beach</span>
                         </div>
                     </div>
                 </div>
@@ -267,6 +270,11 @@
                                     <p class="text-xs font-semibold text-charcoal-dark mt-0.5">100% Loving Care</p>
                                 </div>
                             </div>
+
+                            <!-- Floating Insurance Seal Badge on Image Corner -->
+                            <a href="https://www.petcareins.com" target="_blank" class="hidden sm:flex items-center justify-center bg-white p-2.5 rounded-2xl shadow-lg border border-rose-100 absolute -top-5 -right-5 animate-float-delayed hover:scale-105 transition-transform" title="Insured & Verified Pet Care">
+                                <img src="https://app.petcareins.com/media/site_seals/0001/11/7248ccdc4d46cc4e0c35503ec2fad85aa77e3c56.png" alt="Pet Care and Pet Sitting Insurance Seal" class="h-14 w-auto object-contain">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -345,7 +353,7 @@
                             Dog Walks
                         </h3>
                         <p class="text-sm text-charcoal leading-relaxed">
-                            Safe, refreshing neighborhood walks paced to your dog's energy level—from brisk strolls to leisurely sniff-air adventures.
+                            Safe, refreshing neighborhood walks paced to your dog's energy level—from brisk strolls to leisurely sniff-ari adventures.
                         </p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-charcoal-light">
@@ -679,7 +687,7 @@
                                         <i class="ph ph-copy"></i>
                                         <span id="copy-msg-text">Copy Message Text</span>
                                     </button>
-                                    <a id="direct-link-fallback" href="#" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold underline text-emerald-800 hover:text-emerald-950 px-2 py-1">
+                                    <a id="direct-link-fallback" href="#" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold underline text-emerald-800 hover:text-emerald-950 px-2-1">
                                         Try Again &rarr;
                                     </a>
                                 </div>
@@ -719,6 +727,9 @@
                 <span><i class="ph-fill ph-map-pin text-rose-300 mr-1"></i> Royal Palm Beach</span>
                 <a href="tel:5618600637" class="hover:text-white transition-colors"><i class="ph-fill ph-phone text-rose-300 mr-1"></i> (561) 860-0637</a>
                 <a href="https://instagram.com/emmapetcare" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors"><i class="ph-fill ph-instagram-logo text-rose-300 mr-1"></i> @emmapetcare</a>
+                <a href="https://www.petcareins.com" target="_blank" rel="noopener noreferrer" class="inline-block hover:opacity-90 transition-opacity">
+                    <img src="https://app.petcareins.com/media/site_seals/0001/11/7248ccdc4d46cc4e0c35503ec2fad85aa77e3c56.png" alt="Pet Care and Pet Sitting Insurance Seal" class="h-12 w-auto object-contain">
+                </a>
             </div>
         </div>
     </footer>
